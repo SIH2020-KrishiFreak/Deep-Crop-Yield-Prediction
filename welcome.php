@@ -60,14 +60,21 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
     <h3><b>Input</b></h3><br>
 
-  <form name = "form1" action=".predict" method = "post">    
+  <form name = "form1" action="" method = "post">    
             <div class = "container">    
                 <div class="row">
-
+<!-- 
                 <div class="form-group col-md-4">
                 <input type="text" id="cropName" name="cropName" class="form-control "
                        placeholder="Crop Name" required
                        autofocus>
+                </div> -->
+
+                <div class="form-group col-md-4">
+                <select id="cropName" name="cropName" class="form-control">
+                    <option value="Crop Name" selected >Crop Name</option>
+                    <!-- <option value="kharif">Kharif</option> -->
+                </select>
                 </div>
 
                 <div class="form-group col-md-4">
@@ -79,22 +86,22 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
                 <div class="form-group col-md-4">
                 <select id="season" name="season" class="form-control">
-                    <option value="rabi" selected >Rabi</option>
-                    <option value="kharif">Kharif</option>
+                  <option value="Season" selected >Season</option>
+                  <option value="Rabi" >Rabi</option>
+                  <option value="Kharif" >Kharif</option>
+
                 </select>
                 </div>
 
                 <div class="form-group col-md-4">
                 <select id="state" name="state" class="form-control">
-                    <option value="bihar" selected >Bihar</option>
+                  <option value="bihar" selected >Bihar</option>
                 </select>
                 </div>
 
                 <div class="form-group col-md-4">
                 <select id="district" name="district" class="form-control">
-                    <option value="patna" selected >Patna</option>
-                    <option value="begusarai">Begusarai</option>
-                    <option value="darbhanga">Darbhanga</option>
+                   <option value="District" selected >District</option>
                 </select>
                 </div>
 
@@ -106,9 +113,12 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
                 </div>
                 
-                 <button class="btn btn-primary  mt-4 " style="font-size:1.5vw" type="submit">Predict</button>
+                 <!-- <button class="btn btn-primary  mt-4 " style="font-size:1.5vw" type="submit">Predict</button> -->
+                 <input id="submit" type="button" name="submit" class="btn btn-primary  mt-4 " style="font-size:1.5vw" value="submit">
 
                 <br><br><br><br>
+
+                <div id="Div1">
 
                 <div id="mapid"></div><br/><br/>
                 <div class="row">
@@ -128,7 +138,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                         <div class="col-md-3"></div>
                         
                 </div>
-                <!-- </div> -->
+<!-- 
+                </div> -->
  
                <!--  <p>
                         <a href="reset-password.php" class="btn btn-warning">Reset Your Password</a>
