@@ -60,7 +60,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
     <h3><b>Input</b></h3><br>
 
-  <form name = "form1" action="" method = "post">    
+  <form name = "form1" id="form1" action="" method = "post">    
             <div class = "container">    
                 <div class="row">
 <!-- 
@@ -71,7 +71,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                 </div> -->
 
                 <div class="form-group col-md-4">
-                <select id="cropName" name="cropName" class="form-control">
+                <select id="crop" name="crop" class="form-control">
                     <option value="Crop Name" selected >Crop Name</option>
                     <!-- <option value="kharif">Kharif</option> -->
                 </select>
@@ -94,14 +94,14 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                 </div>
 
                 <div class="form-group col-md-4">
-                <select id="state" name="state" class="form-control">
+                <select id="state_name" name="state_name" class="form-control">
                   <option value="bihar" selected >Bihar</option>
                 </select>
                 </div>
 
                 <div class="form-group col-md-4">
                 <select id="district" name="district" class="form-control">
-                   <option value="District" selected >District</option>
+                   <!-- <option value="District" selected >District</option> -->
                 </select>
                 </div>
 
@@ -138,6 +138,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                         <div class="col-md-3"></div>
                         
                 </div>
+
 <!-- 
                 </div> -->
  
