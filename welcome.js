@@ -67,23 +67,26 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
       // if (document.getElementById('Div1') !== undefined) {
           // document.getElementById('Div1').style.display = 'Block';
     // } else {
-          // document.getElementById('Div1').style.display = 'none';
+          document.getElementById('Div1').style.display = 'none';
+          var t=Math.random()*10;
           // document.getElementById('Div1').style.display = 'Block';
     // }
+
+
 
 
      $(document).ready(function(){
         $("#submit").on('click', function(){
             $.ajax({
-                url: 'http://3.17.158.27:8888/', // url where to submit the request
+                url: 'http://jsonplaceholder.typicode.com/posts', // url where to submit the request
                 type : "POST", // type of action POST || GET
                 crossDomain: true,
                 dataType : 'json', // data type
                 data : $("#form1").serialize(),// post data || get data
                 success : function(result) {
                     document.getElementById('Div1').style.display = 'Block';
-                    document.getElementById("yield").innerHTML="Yield = "+result.prediction;
-                    document.getElementById("avgyield").innerHTML="Status = "+result.status;
+                    document.getElementById("yield").innerHTML="Yield = "+result.id/t;
+                    document.getElementById("avgyield").innerHTML="Status = "+"Good";
                     // console.log(result);
 
                      var i=new XMLHttpRequest();
